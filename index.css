@@ -18,9 +18,25 @@ body {
   padding: 0;
 }
 
+html {
+  position: relative;
+}
+
 body > * {
   margin: 0;
   padding: 0;
+}
+
+html::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  z-index: -1;
+  height: 75%;
+  width: 45%;
+  border-radius: 0 0 0 100px;
+  background-color: var(--light-gray-blue);
 }
 
 main {
@@ -54,6 +70,12 @@ header {
   height: 25px;
 }
 
+.menuBtn:hover,
+.closeBtn:hover {
+    cursor: pointer;
+    transform: translateY(-5%);
+}
+
 .nav {
   position: absolute;
   top: 200%;
@@ -75,6 +97,11 @@ header {
   font-size: 1.25rem;
 }
 
+.nav li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .hr,
 .accent {
   opacity: 0.5;
@@ -91,13 +118,6 @@ header {
 .accent {
   color: var(--dark-gray-blue);
 }
-
-.closeBtn,
-.nav {
-  display: none;
-}
-
-/* *********************** */
 
 section {
   flex-direction: column-reverse;
@@ -157,23 +177,77 @@ h1 {
   font-size: 1.25rem;
   color: var(--dark-gray-blue);
   margin-top: 1rem;
+  width: 75%;
 }
 
 .cta {
-    font-size: .85rem;
-    margin-top: 1rem;
+  font-size: 0.85rem;
+  margin-top: 1rem;
 }
 
 .ctaBtn {
   margin-right: 1rem;
-  padding: .75rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   background-color: var(--red);
   font-weight: bold;
   color: white;
   border-radius: 6px;
 }
 
+.ctaBtn:hover {
+    cursor: pointer;
+    opacity: .65;
+}
+
 .ctaTxt {
-    letter-spacing: 2px;
-    color: var(--gray-blue);
+  letter-spacing: 2px;
+  color: var(--gray-blue);
+}
+
+footer {
+  justify-content: center;
+}
+
+.dis-none {
+    display: none;
+}
+
+@media (min-width: 800px) {
+  section {
+    margin: 6rem 0;
+    flex-direction: row;
+    height: 60vh;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .graphic {
+    width: 900px;
+    transform: translate(-25%, -50%);
+  }
+
+  .menuBtn,
+  .closeBtn {
+    display: none;
+  }
+
+  .nav {
+    position: initial;
+    display: flex;
+    padding: 0;
+    align-items: center;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .hr {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--dark-gray-blue);
+  }
 }

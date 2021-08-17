@@ -1,63 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="index.css">
-  
-  <title>Frontend Mentor | Project tracking intro component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="index.css" />
 
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  <main>
+    <title>Frontend Mentor | Project tracking intro component</title>
 
-    <header>
-      <img class='logo' src="images/logo.svg" alt="logo">
-      <nav>
-        <img class='menuBtn' src="images/icon-hamburger.svg" alt="open menu">
-        <img class='closeBtn' src="images/icon-close.svg" alt="close menu">
-        <ul class='nav'>
-          <li>Product</li>
-          <li>Features</li>
-          <li>Pricing</li>
-          <li><div class='hr'></div></li>
-          <li class='accent'>Login</li>
-        </ul>
-      </nav>
-    </header>
-  
-    <section>
-      <div class="container">
-        <div class="subHead">
-          <p class='newBtn'>New</p>
-          <p>Monograph Dashboard</p>
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <img class="logo" src="images/logo.svg" alt="logo" />
+        <nav>
+          <img
+            class="menuBtn"
+            src="images/icon-hamburger.svg"
+            alt="open menu"
+          />
+          <img
+            class="closeBtn dis-none"
+            src="images/icon-close.svg"
+            alt="close menu"
+          />
+          <ul class="nav dis-none">
+            <li>Product</li>
+            <li>Features</li>
+            <li>Pricing</li>
+            <li><div class="hr"></div></li>
+            <li class="accent">Login</li>
+          </ul>
+        </nav>
+      </header>
+
+      <section>
+        <div class="container">
+          <div class="subHead">
+            <p class="newBtn">New</p>
+            <p>Monograph Dashboard</p>
+          </div>
+          <h1>Powerful insights into your team</h1>
+          <p class="bodyTxt">
+            Project planning and time tracking for agile teams
+          </p>
+          <div class="cta">
+            <p class="ctaBtn">Schedule a demo</p>
+            <p class="ctaTxt">To see a preview</p>
+          </div>
         </div>
-        <h1>Powerful insights into your team</h1>
-        <p class='bodyTxt'>Project planning and time tracking for agile teams</p>
-        <div class="cta">
-          <p class='ctaBtn'>Schedule a demo</p>
-          <p class='ctaTxt'>To see a preview</p>
-        </div>
-      </div>
-  
-      <div class="container">
-        <img class='graphic' src="images/illustration-devices.svg" alt="computer showing app">
-      </div>
-    </section>
-    
-    <footer>
-      <p class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-        Coded by <a href="#">Your Name Here</a>.
-      </p>
-    </footer>
 
-  </main>
-</body>
+        <div class="container">
+          <img
+            class="graphic"
+            src="images/illustration-devices.svg"
+            alt="computer showing app"
+          />
+        </div>
+      </section>
+
+      <footer>
+        <p class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="#">Your Name Here</a>.
+        </p>
+      </footer>
+    </main>
+    <script>
+      document.querySelector(".menuBtn").addEventListener("click", () => {
+        document.querySelector(".closeBtn").classList.remove("dis-none");
+        document.querySelector(".nav").classList.remove("dis-none");
+        document.querySelector(".menuBtn").classList.add("dis-none");
+      });
+
+      document.querySelector(".closeBtn").addEventListener("click", () => {
+        document.querySelector(".nav").classList.add("dis-none");
+        document.querySelector(".menuBtn").classList.remove("dis-none");
+        document.querySelector(".closeBtn").classList.add("dis-none");
+      });
+    </script>
+  </body>
 </html>
